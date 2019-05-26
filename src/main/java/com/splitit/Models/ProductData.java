@@ -1,4 +1,4 @@
-package com.splitit.Controllers;
+package com.splitit.Models;
 
 public class ProductData {
 

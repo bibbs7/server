@@ -23,6 +23,7 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.Response.Status;
 
 import com.splitit.Models.Request;
+import com.splitit.Models.RequestData;
 import com.splitit.Models.User;
 import com.splitit.Repository.RequestRepository;
 

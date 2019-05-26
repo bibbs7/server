@@ -24,6 +24,7 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.Response.Status;
 
 import com.splitit.Models.Product;
+import com.splitit.Models.ProductData;
 import com.splitit.Models.User;
 import com.splitit.Repository.ProductRepository;
 
