@@ -42,8 +42,7 @@ public class ProductController<ImModel> {
 		this.productRepository = productRepository;
 	}
 
-	    //@CrossOrigin(origins = "http://localhost:3000")
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = "/add") // Map ONLY GET Requests
 	public HttpStatus addProduct( @RequestBody ProductData data) {
 		// @ResponseBody means the returned String is the response, not a view name
@@ -62,16 +61,13 @@ public class ProductController<ImModel> {
 	}
 
 	@GetMapping("/{id}")
-  //  @CrossOrigin(origins = "http://localhost:3000")
-
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+        @CrossOrigin(origins = "http://localhost:3000")
 	public Optional<Product> findById(@PathVariable final long id) {
         return productRepository.findById(id);
     	}
 
   @PutMapping(value="/price/{id}")
-//  @CrossOrigin(origins = "http://localhost:3000")
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+  @CrossOrigin(origins = "http://localhost:3000")
   public ResponseEntity<Product> changePrice(@PathVariable("id") long id,
                                         @RequestBody Product product){
     return productRepository.findById(id)
@@ -84,9 +80,7 @@ public class ProductController<ImModel> {
   }
 
 
- // @CrossOrigin(origins = "http://localhost:3000")
-
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+  @CrossOrigin(origins = "http://localhost:3000")
   @PutMapping(value="/discount/{id}")
   public ResponseEntity<Product> changeDiscountPrice(@PathVariable("id") long id,
                                         @RequestBody Product product){
@@ -99,10 +93,7 @@ public class ProductController<ImModel> {
         }).orElse(ResponseEntity.notFound().build());
   }
 
-
- //@CrossOrigin(origins = "http://localhost:3000")
-
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+  @CrossOrigin(origins = "http://localhost:3000")
   @DeleteMapping("/delete/{id}")
 public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long id, @RequestBody Product product ){
 		Product deletingProduct = productRepository.findById(id).get(); 
