@@ -34,9 +34,7 @@ public class UserController {
 		this.userRepository = userRepository;
 	}
 
-//	@CrossOrigin(origins = "http://localhost:3000")
-
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = "/add") // Map ONLY GET Requests
 	public @ResponseBody HttpStatus addNewUser(@RequestBody RegisterData data) {
 		// @ResponseBody means the returned String is the response, not a view name
@@ -55,8 +53,7 @@ public class UserController {
         return userRepository.getOne(id);
     }
 
-	//@CrossOrigin(origins = "http://localhost:3000")
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = { "/loginAdmin" })
 	public HttpStatus loginAdmin(@RequestBody LoginData data ) {
 		if(findById(data.id) == null) {
@@ -77,8 +74,7 @@ public class UserController {
 	}
 
 
-	//@CrossOrigin(origins = "http://localhost:3000")
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = { "/loginStaff" })
 	public HttpStatus loginStaff(@RequestBody LoginData data) {
 		if(findById(data.id) == null) {
