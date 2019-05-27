@@ -42,9 +42,7 @@ public class TableController<ImModel> {
         this.tableRepository = tableRepository;
     }
 
-   // @CrossOrigin(origins = "http://localhost:3000")
-
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+   @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping(path = "/add") // Map ONLY GET Requests
     public @ResponseBody HttpStatus addTable(@RequestBody int numSeats) {
         // @ResponseBody means the returned String is the response, not a view name
@@ -62,15 +60,13 @@ public class TableController<ImModel> {
     }
     
 
-   // @CrossOrigin(origins = "http://localhost:3000")
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{id}")
     public Optional<Tables> findById(@PathVariable final long id) {
         return tableRepository.findById(id);
     }
 
-   // @CrossOrigin(origins = "http://localhost:3000")
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping(value = "/{id}")
     public <U> ResponseBuilder changeSeats(@PathVariable("id") long id, @RequestBody int newNumber) {
 
@@ -96,8 +92,7 @@ public class TableController<ImModel> {
   
 
 
-   // @CrossOrigin(origins = "http://localhost:3000")
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+    @CrossOrigin(origins = "http://localhost:3000")
   @DeleteMapping("/delete/{id}")
 public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long id, @RequestBody Tables table ){
 		Tables deletingTable = tableRepository.findById(id).get(); 
