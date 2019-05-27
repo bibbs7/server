@@ -39,9 +39,7 @@ public class RequestController<ImModel> {
 		this.requestRepository = requestRepository;
 	}
 
-    //@CrossOrigin(origins = "http://localhost:3000")
-
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+    @CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = "/add") // Map ONLY GET Requests
 	public @ResponseBody HttpStatus addNewUser(@RequestBody RequestData data) {
 		// @ResponseBody means the returned String is the response, not a view name
@@ -63,17 +61,14 @@ public class RequestController<ImModel> {
 		
 	}
 
-    //@CrossOrigin(origins = "http://localhost:3000")
-
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
+    @CrossOrigin(origins = "http://localhost:3000")
 	@GetMapping("/{id}")
 	public Optional<Request> findById(@PathVariable final long id) {
         return requestRepository.findById(id);
     	}
 
-    //@CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:3000")
 
-	 @CrossOrigin(origins = "https://webapp-190527094807.azurewebsites.net/")
 	@PutMapping(value="/{id}")
   public ResponseEntity<Request> closeRequest(@PathVariable("id") long id,
                                         @RequestBody Request request){
